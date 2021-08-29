@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import NavBar from './components/NavBar'
 
 
 function App() {
  
-  const array = [
-    {nombre:"mateo", edad:"25"},
-    {nombre : "edu", edad : "90"},
-    {nombre : "marcos", edad : "50"},
-    {nombre: "miguel", edad : "90"}
-  ]
-  const numeros =[1,2,3]
-  const nuevoNumero = numeros.map(elemento =>elemento*2)
-  console.log (nuevoNumero)
+
   return (
   
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Bienvenido!</p>
+        <h1>Bienvenidos a mi tienda de Guitarras!</h1>
+        <NavBar/> <hr/>
+        <p>Las ofertas de la semana</p>
+        
         
       </header>
     </div>
