@@ -1,4 +1,4 @@
-import './CartWidget.css'
+import './cartWidget.css'
 
 const CartWidget = () => {
 
@@ -11,3 +11,13 @@ const CartWidget = () => {
 
 
 export default CartWidget;
+
+
+
+const task = new Promise ((resolve,reject) =>{
+reject ("errorcitooo")
+})
+
+task.then (result =>{console.log(result)},
+err => {console.log(err)}
+)

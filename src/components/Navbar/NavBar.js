@@ -1,6 +1,19 @@
 import CartWidget from "../CartWidget/CartWidget";
+import { useEffect, useState } from "react";
 
 const NavBar = () => {
+
+  useEffect (()=>{
+    console.log("despues del primer renderizado");
+    return () => {
+      console.log("antes de desmontar el componente")
+    }
+  },[])
+
+  console.log("el componente va a ser renderizado")
+  
+  const [] = useState();
+
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light" >
         <div class="container-fluid" >
