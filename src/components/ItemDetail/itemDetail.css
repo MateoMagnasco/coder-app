@@ -1,0 +1,14 @@
+#max {
+    width: 18rem;
+    text-align: center;
+    height: 5%;
+    display:block;
+    margin:auto;
+    
+}
+
+#div {
+    border: solid 2px black;
+    border-radius: 8px;
+    box-shadow: 10px 5px 5px black;
+}

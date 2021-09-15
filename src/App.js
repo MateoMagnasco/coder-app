@@ -23,11 +23,6 @@ const productos = [
   
    
 
-
-
-
-
-
 function App() {
 
   const [view, setView] = useState (true)
