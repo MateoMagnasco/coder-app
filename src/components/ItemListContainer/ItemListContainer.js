@@ -18,17 +18,19 @@ function getItemList () {
 
 
 const ItemListContainer = () =>{
+    const [loading, setLoading] = useState(true)
     const [itemList, setItemList] = useState ([])
 
    
     useEffect(()=> {
        const items = getItemList()
        items.then(items => { setItemList(items) })
+       setLoading(false)
        
-    }) 
+    },[loading]) 
 
     return (<div className="estilo">
-        <ItemList items={itemList}/>
+        <ItemList items={itemList} loading={loading}/>
         <Counter initial = {1} stock= {25}  />
     </div>);
 }
