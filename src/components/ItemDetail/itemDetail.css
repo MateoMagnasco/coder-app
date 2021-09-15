@@ -4,11 +4,15 @@
     height: 5%;
     display:block;
     margin:auto;
+    background-color: black;
+    color: white;
     
 }
 
 #div {
-    border: solid 2px black;
+    border: solid 2px grey;
     border-radius: 8px;
     box-shadow: 10px 5px 5px black;
+    background-color: black;
+    color: white;
 }

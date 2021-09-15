@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import './itemDetailContainer.css'
 
 function getObject (){
 
@@ -23,7 +24,7 @@ const ItemDetailContainer =() =>{
     })
     
     return (
-        <div>
+        <div className="estilo">
             <ItemDetail item={itemData}/>
 
         </div>

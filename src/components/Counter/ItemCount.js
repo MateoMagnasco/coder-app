@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./itemCounter.css"
 
 const Counter = ({initial, stock,}) => {
 
@@ -23,9 +24,9 @@ const Counter = ({initial, stock,}) => {
 
 
 
-return (<div class="input-group mb-3">
+return (<div class="input-group mb-3" id="divCounter">
 
-    <form>
+    <form id="form">
  
     <label>{message}</label>
     <input type="number" class="form-control" aria-label="Example text with two button addons" max= {stock} min={initial} value={count}/>

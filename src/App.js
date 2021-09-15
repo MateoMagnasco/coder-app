@@ -44,7 +44,7 @@ function App() {
   
     <div className="App">
       <header className="App-header">
-        {view? <NavBar/>: <h1>Se oculto el NavBar</h1>}<hr/>
+        {view? <NavBar/>: <h1>Se oculto el NavBar</h1>}
         <h1>Bienvenidos a mi tienda de Guitarras!</h1>
         <button onClick={()=>setView(!view)}>Mostrar navbar?</button>
          {/* <h1 >{count}</h1> */}

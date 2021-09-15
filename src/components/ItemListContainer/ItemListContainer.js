@@ -1,6 +1,7 @@
 import Counter from "../Counter/ItemCount";
 import { useEffect, useState } from "react";
 import ItemList from "../ItemList/ItemList";
+import './itemListContainer.css'
 
 function getItemList () {
     return new Promise ((resolve,reject) =>{
@@ -26,7 +27,7 @@ const ItemListContainer = () =>{
        
     }) 
 
-    return (<div>
+    return (<div className="estilo">
         <ItemList items={itemList}/>
         <Counter initial = {1} stock= {25}  />
     </div>);
