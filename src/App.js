@@ -49,15 +49,13 @@ function App() {
         
         
         <h1>Bienvenidos a mi tienda de Guitarras!</h1>
-        <ul>
-          {gtrsList.map(instrumento=> <li key={instrumento.id}>{instrumento.nombre}</li>)}
-        </ul>
+      
         <button onClick={()=>setView(!view)}>Mostrar navbar?</button>
          {/* <h1 >{count}</h1> */}
          </header>
          
         
-        <ItemListContainer greeting="Este es mi ItemListContainer"/>
+        <ItemListContainer/>
         <ItemDetailContainer/>
         
         
