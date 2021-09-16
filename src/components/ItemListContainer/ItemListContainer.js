@@ -18,14 +18,14 @@ function getItemList () {
 
 
 const ItemListContainer = () =>{
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState("loading")
     const [itemList, setItemList] = useState ([])
 
    
     useEffect(()=> {
        const items = getItemList()
        items.then(items => { setItemList(items) })
-       setLoading(false)
+       setLoading("")
        
     },[loading]) 
 
