@@ -5,12 +5,12 @@ import "./itemList.css"
 
 
 
-const handleOnKeyDown = (ev) =>{
+/* const handleOnKeyDown = (ev) =>{
   if(ev.key==="a" || ev.key==="e" || ev.key==="i" || ev.key==="o" || ev.key==="u"){
     ev.preventDefault()
   } else {console.log(ev.key)}
 
-}
+} */
 
 
 const ItemList = (props) =>{
@@ -18,13 +18,10 @@ const ItemList = (props) =>{
     
     return ( 
     <div id="estilo">
-      
-      
-       {props.items.map(item => {return <div key={item.id}> <Item title={item.title} price = {item.price} pictureUrl = {item.pictureUrl} description = {item.description}  /> :<h3>{props.loading}</h3> </div> })
-} 
-      <input onKeyDown={handleOnKeyDown}></input>
-                
-        </div>
+       {props.items.map(item => {return <div key={item.id}> <Item title={item.title} price = {item.price} pictureUrl = {item.pictureUrl} description = {item.description}  /></div> })
+       } 
+    
+     </div>
     )
     
     

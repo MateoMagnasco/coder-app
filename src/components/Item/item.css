@@ -1,7 +1,8 @@
 #imagen {
-    width: 18rem;
+    width: 400px;
+    height: 450px;
     text-align: center;
-    display:block;
+    display:inline-block;
     margin:auto;
     background-color: black;
     color: white;
@@ -10,5 +11,7 @@
   }
 
   #max {
-      height: 5%;
+      height: 50px;
+      width: 10px;
+      display: inline-block;
   }

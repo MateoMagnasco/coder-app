@@ -1,7 +1,11 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { useEffect, useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import "./navBar.css"
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-const NavBar = () => {
+
+const NavBar = ({products, categories}) => {
 
   useEffect (()=>{
     console.log("despues del primer renderizado");
@@ -15,32 +19,26 @@ const NavBar = () => {
   const [] = useState();
 
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-        <div class="container-fluid" >
-          <a class="navbar-brand" href="#">Inicio</a>
-          
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Guitarras</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Modelos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Precio</a>
-              </li>
-              <button type="button" class="btn btn-danger">Contactanos!  <CartWidget/> </button>
-             
-              
-            </ul>
-          </div>
-        </div>
+  
+      <nav className="navBar"  >
+        <div className="container-fluid" >
+
+
+         <Link to={"/"} className="option">Inicio </Link>
+          <NavLink to={"/DetailContainer"} activeClassName="navLink" className="option">
+            Detalles 
+          </NavLink>
+          {categories.map(cat => <NavLink key={cat.id} to={`/product/${cat.name}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
+       
+          <Link to={"/"} className="option">
+            Contactanos! 
+          </Link>
+          <CartWidget/>
+ 
+      </div>
         
-      </nav>
+     </nav>
+  
       
 
     );

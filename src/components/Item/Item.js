@@ -1,11 +1,16 @@
 import './item.css'
 const Item = (props) => {
+  if(!props.title){
+    <h3>Loading...</h3>
+  }
   return (
       <div className="card mb-3" id="imagen" >
-        <img src={props.pictureUrl} class="card-img-top" alt="..." id="max"/>
-        <p className="card-text">{props.description}</p>
+        
+        
         <div className="card-body">
           <h5 className="card-title">{props.title}</h5>
+          <img src={props.pictureUrl} alt="..." id="max"/>
+          <p className="card-text">{props.description}</p>
           <p className="card-text">{props.price}</p>
         </div>
       </div>
