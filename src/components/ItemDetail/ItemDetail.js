@@ -3,10 +3,6 @@ import "./itemDetail.css"
 
 const ItemDetail = (props) => {
 
-    if(!props){
-        return <h3>Loading...</h3>
-    }
-
     return(
         <div className="card mb-3" id="div">
             <h3 className="card-title">{props.item.title}</h3>

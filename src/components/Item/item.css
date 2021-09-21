@@ -1,17 +1,19 @@
 #imagen {
     width: 400px;
-    height: 450px;
+    height: 400px;
     text-align: center;
     display:inline-block;
     margin:auto;
     background-color: black;
     color: white;
     border: solid grey 2px;
-    box-shadow: 3px 5px 5px whitesmoke;
+    
+    
   }
 
   #max {
       height: 50px;
       width: 10px;
-      display: inline-block;
+
+      margin: auto;
   }

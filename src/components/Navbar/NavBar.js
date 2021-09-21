@@ -3,33 +3,24 @@ import { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./navBar.css"
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Brand from "../Brand/Brand";
 
 
-const NavBar = ({products, categories}) => {
+const categories = [{id:1, name:"Eléctricas"},{id:2, name:"Acústicas"},{id:3, name:"Nylon"}]
 
-  useEffect (()=>{
-    console.log("despues del primer renderizado");
-    return () => {
-      console.log("antes de desmontar el componente")
-    }
-  },[])
 
-  console.log("el componente va a ser renderizado")
-  
-  const [] = useState();
+const NavBar = () => {
 
     return (
-  
+    <div>
+      <Brand/>
       <nav className="navBar"  >
         <div className="container-fluid" >
-
-
          <Link to={"/"} className="option">Inicio </Link>
           <NavLink to={"/DetailContainer"} activeClassName="navLink" className="option">
             Detalles 
           </NavLink>
-          {categories.map(cat => <NavLink key={cat.id} to={`/product/${cat.name}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
-       
+          {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
           <Link to={"/"} className="option">
             Contactanos! 
           </Link>
@@ -38,6 +29,7 @@ const NavBar = ({products, categories}) => {
       </div>
         
      </nav>
+    </div>
   
       
 

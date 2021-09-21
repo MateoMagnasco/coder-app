@@ -1,25 +1,27 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './itemDetailContainer.css'
+import getItemList from "../../services/getItems"
+import { useParams } from "react-router"
 
-function getObject (){
 
-    const object = {title:"Guitarra Les Paul Deluxe", id:100, price: "$200", pictureUrl: "https://cdn.shopify.com/s/files/1/1304/0581/products/IMG_6218.jpg?v=1467660401", description:"Guitarra historica del año 1979!"}
 
-    return new Promise ((resolve,reject)=>{
-        setTimeout(()=> (resolve(object)),2000)
-
-    })
-
-}
+ 
 
 const ItemDetailContainer =() =>{
-    const item = getObject()
+  
 
-    const[itemData,setGtr] = useState([])
+    const[itemData,setItem] = useState([])
+
+
+    const params = useParams()
+    const id= params.id
 
     useEffect(()=>{
-        item.then(obj => {setGtr(obj)
+        const items = getItemList()
+        items.then(items => { 
+        const item = items.find(item=>item.id == id) 
+        setItem(item)
         })
     })
     
