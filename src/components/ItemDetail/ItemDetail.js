@@ -1,5 +1,6 @@
 import Item from "../Item/Item"
 import "./itemDetail.css"
+import Counter from "../Counter/ItemCount"
 
 const ItemDetail = (props) => {
 
@@ -11,7 +12,9 @@ const ItemDetail = (props) => {
             <div className="card-body" >
                 <p className="card-text">{props.item.price}</p>
             </div>
+        <Counter initial={1} stock={25}/>
         </div>
+
 
     )
 
