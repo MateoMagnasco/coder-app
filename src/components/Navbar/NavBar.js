@@ -16,10 +16,6 @@ const NavBar = () => {
       <Brand/>
       <nav className="navBar"  >
         <div className="container-fluid" >
-         <Link to={"/"} className="option">Inicio </Link>
-          <NavLink to={"/DetailContainer"} activeClassName="navLink" className="option">
-            Detalles 
-          </NavLink>
           {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
           <Link to={"/"} className="option">
             Contactanos! 
