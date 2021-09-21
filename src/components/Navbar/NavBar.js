@@ -13,7 +13,7 @@ const NavBar = () => {
 
     return (
     <div>
-      <Brand/>
+      
       <nav className="navBar"  >
         <div className="container-fluid" >
           {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
@@ -25,6 +25,7 @@ const NavBar = () => {
       </div>
         
      </nav>
+     <Brand/>
     </div>
   
       
