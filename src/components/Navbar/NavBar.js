@@ -17,15 +17,14 @@ const NavBar = () => {
       <nav className="navBar"  >
         <div className="container-fluid" >
           {categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`} activeClassName="navLink" className="option">{cat.name} </NavLink>)}
-          <Link to={"/"} className="option">
+          <Link to={"/"} className="option" id="contacto">
             Contactanos! 
           </Link>
           <CartWidget/>
- 
-      </div>
+    </div>
         
-     </nav>
-     <Brand/>
+      </nav>
+         <Brand/>
     </div>
   
       

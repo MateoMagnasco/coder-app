@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Item = (props) => {
   if(!props.title){
-    <h3>Loading...</h3>
+    return <h3>Loading...</h3>
   }
   return (
     <Link to={`/item/${props.id}`}>

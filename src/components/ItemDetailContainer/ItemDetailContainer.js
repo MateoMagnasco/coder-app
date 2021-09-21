@@ -24,7 +24,10 @@ const ItemDetailContainer =() =>{
         setItem(item)
         })
     })
-    
+        if(itemData== false){
+            return <h1 style={{color:"white"}}>Loading...</h1>
+        }
+
     return (
         <div className="estilo">
             <ItemDetail item={itemData}/>

@@ -30,7 +30,7 @@ const ItemListContainer = () =>{
   
     return (
     <div className="estilo">
-        {loading== true? <h1 style={{color:"white"}}>Loading...</h1>:<ItemList items={id ? itemList.filter(item => item.categoryId == id) : itemList} /> }
+        {itemList== false? <h1 style={{color:"white"}}>Loading...</h1>:<ItemList items={id ? itemList.filter(item => item.categoryId == id) : itemList} /> }
         
     </div>);
 }
