@@ -9,14 +9,14 @@ import { CartContext } from './context/CartContext';
 
 
 
+
   
    
 function App() {
 
-  const [view, setView] = useState (true)
 
   return (
-  <div className="App">
+  <div className="App" >
      <BrowserRouter>
       <header className="App-header">
          <NavBar/>

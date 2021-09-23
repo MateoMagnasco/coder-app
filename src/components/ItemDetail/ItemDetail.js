@@ -1,8 +1,30 @@
 import Item from "../Item/Item"
 import "./itemDetail.css"
 import Counter from "../Counter/ItemCount"
+import { useState } from "react"
+
+
 
 const ItemDetail = (props) => {
+
+    const [count, setCount] = useState (0)
+
+    const onAdd = () => {
+        if (count <= 25) {
+            setCount(count -1)
+        }
+        
+    }
+
+    const onRest = () =>{
+        if (count>=0) {
+        setCount(count -1)}
+    }
+    
+
+
+
+
 
     return(
         <div className="card mb-3" id="div">
@@ -12,7 +34,7 @@ const ItemDetail = (props) => {
             <div className="card-body" >
                 <p className="card-text">{props.item.price}</p>
             </div>
-        <Counter initial={1} stock={25}/>
+        <Counter initial={1} stock={25} setcount={setCount}/>
         </div>
 
 

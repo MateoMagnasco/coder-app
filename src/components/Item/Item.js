@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Item = (props) => {
   if(!props.title){
-    return <h3>Loading...</h3>
-  }
+    return <h3>Loading...</h3>   }
+    
   return (
     <Link to={`/item/${props.id}`}>
       <div className="card mb-3" id="imagen" >
