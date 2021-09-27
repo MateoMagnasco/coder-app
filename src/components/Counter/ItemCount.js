@@ -1,39 +1,44 @@
 import { useState } from "react";
 import "./itemCounter.css"
 
-const Counter = ({initial, stock}) => {
+const Counter = ({initial, stock,setCount, setAdded}) => {
+  const [quantity, setQuantity] = useState(0)
 
-    const [count,setCount] = useState(initial);
-    
-    if (count >= initial && count <=stock){
-        console.log("no pasa nada")}
-    
-        else if (count <= initial) {setCount(initial)}
+  const onAdd = () =>{
+    if(quantity< stock) {
+      setQuantity(quantity +1)
+    }
+  }
 
-        else {setCount(stock)}
+  const onRemove = () =>{
+    if(quantity>= initial) {
+      setQuantity(quantity -1)
+    }
+  }
+   
+  const onAddCart = () =>{
+    setCount(quantity)
+    setQuantity(0)
+    setAdded (true)
 
-
-  const [message,setMessage] = useState("");
-
-        if(count>stock) {
-          setMessage("Nuestro stock es de 25!")
-        }
+  }
       
 
       
 
 
 
-return (<div class="input-group mb-3" id="divCounter">
+return (<div  className="divCounter">
 
-    <form id="form">
- 
-    <label>{message}</label>
-    <input type="number" class="form-control" aria-label="Example text with two button addons" max= {stock} min={initial} value={count}/>
-    <button class="btn btn-primary" type="button" onClick={()=>setCount(count-1)}>-</button>
-    <button class="btn btn-primary" type="button" onClick= {()=>setCount(count+1)}>+</button>
-    <button type="submit" style={{margin: 8}}>Comprar</button>
-    </form>
+
+  <td align="center" className="btn btn-outline-primary"> {quantity} </td>
+  <button onClick={onRemove} type="button" className="btn btn-primary">-</button>
+  <button onClick={onAddCart} type="button" className="btn btn-primary">Agregar al carrito</button>
+  <button onClick={onAdd} type="button" className="btn btn-primary">+</button>
+
+
+
+
 </div>
 
 );

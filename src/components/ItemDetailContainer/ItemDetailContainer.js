@@ -3,6 +3,8 @@ import ItemDetail from "../ItemDetail/ItemDetail"
 import './itemDetailContainer.css'
 import getItemList from "../../services/getItems"
 import { useParams } from "react-router"
+import CheckoutButton from "../CheckoutButton/CheckoutButton"
+
 
 
 
@@ -31,6 +33,8 @@ const ItemDetailContainer =() =>{
     return (
         <div className="estilo">
             <ItemDetail item={itemData}/>
+            
+            <CheckoutButton/>
 
         </div>
     )

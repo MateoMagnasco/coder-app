@@ -9,17 +9,11 @@ const ItemDetail = (props) => {
 
     const [count, setCount] = useState (0)
 
-    const onAdd = () => {
-        if (count <= 25) {
-            setCount(count -1)
-        }
-        
-    }
+    const [added, setAdded] = useState (false)
 
-    const onRest = () =>{
-        if (count>=0) {
-        setCount(count -1)}
-    }
+
+
+
     
 
 
@@ -34,7 +28,8 @@ const ItemDetail = (props) => {
             <div className="card-body" >
                 <p className="card-text">{props.item.price}</p>
             </div>
-        <Counter initial={1} stock={25} setcount={setCount}/>
+
+            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded}/>}
         </div>
 
 
