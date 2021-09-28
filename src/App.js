@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react' 
+import {useEffect, useState, createContext} from 'react' 
 import './App.css';
 import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -10,13 +10,20 @@ import { CartContext } from './context/CartContext';
 
 
 
-  
+
    
 function App() {
+
+const [state, setState] = useState ()
+
+
+
+  
 
 
   return (
   <div className="App" >
+    <CartContext.Provider>
      <BrowserRouter>
       <header className="App-header">
          <NavBar/>
@@ -31,7 +38,7 @@ function App() {
             <ItemListContainer/>
         </Route>
         <Route path="/item/:id">
-           <ItemDetailContainer/>
+           <ItemDetailContainer />
         </Route>
 
         <Route path="/cart">
@@ -39,6 +46,8 @@ function App() {
         </Route>
         </Switch>
         </BrowserRouter>
+        </CartContext.Provider>
+        
 
     </div>
   );

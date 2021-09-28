@@ -31,7 +31,7 @@ const Counter = ({initial, stock,setCount, setAdded}) => {
 return (<div  className="divCounter">
 
 
-  <td align="center" className="btn btn-outline-primary"> {quantity} </td>
+  <td align="center"> {quantity} </td>
   <button onClick={onRemove} type="button" className="btn btn-primary">-</button>
   <button onClick={onAddCart} type="button" className="btn btn-primary">Agregar al carrito</button>
   <button onClick={onAdd} type="button" className="btn btn-primary">+</button>

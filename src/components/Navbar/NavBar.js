@@ -1,15 +1,18 @@
 import CartWidget from "../CartWidget/CartWidget";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./navBar.css"
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Brand from "../Brand/Brand";
 
 
+
 const categories = [{id:1, name:"Eléctricas"},{id:2, name:"Acústicas"},{id:3, name:"Nylon"}]
 
 
 const NavBar = () => {
+
+
 
     return (
     <div>
@@ -20,7 +23,7 @@ const NavBar = () => {
           <Link to={"/"} className="option" id="contacto">
             Contactanos! 
           </Link>
-          <CartWidget/>
+          <CartWidget />
     </div>
         
       </nav>

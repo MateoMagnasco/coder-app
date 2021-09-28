@@ -29,7 +29,7 @@ const ItemDetail = (props) => {
                 <p className="card-text">{props.item.price}</p>
             </div>
 
-            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded}/>}
+            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded} />}
         </div>
 
 
