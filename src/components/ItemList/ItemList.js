@@ -20,7 +20,7 @@ const ItemList = (props) =>{
     
     return ( 
     <div id="estilo">
-       {props.items.map(item => {return <div key={item.id}> <Item id={item.id} title={item.title} price = {item.price} pictureUrl = {item.pictureUrl} description = {item.description}  /></div> })
+       {props.items.map(item => {return <div key={item.id}> <Item id={item.id} title={item.title} price = {item.price} pictureUrl = {item.pictureUrl} description = {item.description} quantity = {item.quantity}  /></div> })
        } 
     
      </div>

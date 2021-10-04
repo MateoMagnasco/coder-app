@@ -4,7 +4,9 @@ import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import { CartContext } from './context/CartContext';
+import { CartContextProvider } from './context/CartContext/CartContext';
+import Cart from './components/Cart/Cart';
+
 
 
 
@@ -23,7 +25,7 @@ const [state, setState] = useState ()
 
   return (
   <div className="App" >
-    <CartContext.Provider>
+    <CartContextProvider>
      <BrowserRouter>
       <header className="App-header">
          <NavBar/>
@@ -40,13 +42,12 @@ const [state, setState] = useState ()
         <Route path="/item/:id">
            <ItemDetailContainer />
         </Route>
-
-        <Route path="/cart">
-          <div/> 
+        <Route path='/cart' >
+            <Cart />
         </Route>
         </Switch>
         </BrowserRouter>
-        </CartContext.Provider>
+        </CartContextProvider>
         
 
     </div>

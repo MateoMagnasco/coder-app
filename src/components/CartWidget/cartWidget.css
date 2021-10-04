@@ -1,9 +1,15 @@
 .cart {
-    color: rgb(142, 208, 247);
+    color: rgb(252, 168, 168);
     text-align: center;
+    
     
   
    
   
     
+}
+
+.button {
+    background-color: rgba(49, 6, 6, 0.925);
+    color: white;
 }

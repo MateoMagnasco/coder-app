@@ -11,6 +11,8 @@ import getItemList from "../../services/getItems";
 
 
 
+
+
 const ItemListContainer = () =>{
     const [loading, setLoading] = useState(true)
     const [itemList, setItemList] = useState ([])
@@ -27,8 +29,9 @@ const ItemListContainer = () =>{
        
     },[loading]) 
 
-  
+   
     return (
+    
     <div className="estilo">
         {itemList== false? <h1 style={{color:"white"}}>Loading...</h1>:<ItemList items={id ? itemList.filter(item => item.categoryId == id) : itemList} /> }
         

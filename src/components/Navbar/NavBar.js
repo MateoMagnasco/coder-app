@@ -4,6 +4,8 @@ import { NavLink, Link } from "react-router-dom";
 import "./navBar.css"
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Brand from "../Brand/Brand";
+import CartContext from "../../context/CartContext/CartContext";
+
 
 
 
@@ -12,6 +14,7 @@ const categories = [{id:1, name:"Eléctricas"},{id:2, name:"Acústicas"},{id:3, 
 
 const NavBar = () => {
 
+const {getQuantity} = useContext(CartContext)
 
 
     return (
@@ -23,7 +26,8 @@ const NavBar = () => {
           <Link to={"/"} className="option" id="contacto">
             Contactanos! 
           </Link>
-          <CartWidget />
+          {getQuantity() !== 0 && <CartWidget/>}
+          
     </div>
         
       </nav>

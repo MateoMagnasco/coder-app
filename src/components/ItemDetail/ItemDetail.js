@@ -26,10 +26,10 @@ const ItemDetail = (props) => {
             <p className="card-text">{props.item.description}</p>
             <img src={props.item.pictureUrl} class="card-img-top" alt="..." id="max"/>
             <div className="card-body" >
-                <p className="card-text">{props.item.price}</p>
+                <p className="card-text">Precio: {props.item.price}</p>
             </div>
 
-            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded} />}
+            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded} itemData={props.item} />}
         </div>
 
 

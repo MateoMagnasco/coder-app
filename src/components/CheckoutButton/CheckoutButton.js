@@ -6,7 +6,7 @@ const CheckoutButton = () => {
 
     return <>
 <Link to = {`/cart`}>
-<button className="btn btn-primary" type="button">Finalizar Compra</button>
+<button className="btn btn-primary" type="button">Ir al carrito</button>
 </Link>
 
 
