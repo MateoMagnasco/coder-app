@@ -6,6 +6,7 @@ import { useParams } from "react-router"
 import CheckoutButton from "../CheckoutButton/CheckoutButton"
 import { db } from '../../services/firebase/firebase'
 import { doc, getDoc } from 'firebase/firestore'
+import { getProductById } from "../../services/firebase/firebase"
 
 
 
@@ -15,23 +16,21 @@ import { doc, getDoc } from 'firebase/firestore'
 const ItemDetailContainer =() =>{
   
 
-    const[itemData,setItem] = useState([])
+    const[itemData,setItem] = useState(null)
 
 
     const params = useParams()
     const id= params.id
 
     useEffect(()=>{
-        const items = getItemList()
-        items.then(items => { 
-        const item = items.find(item=>item.id == id) 
-        setItem(item)
-        })
-    })
-        if(itemData== false){
+         getProductById(id).then(product => {setItem(product)})
+
+        },[])
+    
+        if(!itemData){
             return <h1 style={{color:"white"}}>Loading...</h1>
         }
-
+        console.log(itemData)
     return (
         <div className="estilo">
             <ItemDetail item={itemData}/>

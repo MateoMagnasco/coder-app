@@ -10,11 +10,11 @@ import { collection, getDocs, query, where } from "@firebase/firestore";
 
 const ItemListContainer = ()=> {
     const [products, setProducts] = useState([])
-    const {categoryid} = useParams()
+    const {categoryId} = useParams()
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        if(!categoryid) {
+        if(!categoryId) {
             setLoading(true)
             getDocs(collection(db, 'items')).then((querySnapshot) => {
                 const products = querySnapshot.docs.map(doc => {
@@ -22,28 +22,30 @@ const ItemListContainer = ()=> {
                 }) 
                 setProducts(products)
             }).catch((error) => {
-                console.log('Error searching intems', error)
+                console.log('Error searching items', error)
             }).finally(() => {
                 setLoading(false)
             })
         } else {
             setLoading(true)
-            getDocs(query(collection(db, 'items'), where('category', '==', categoryid))).then((querySnapshot) => {
+            getDocs(query(collection(db, 'items'), where('categoryId', '==', parseInt(categoryId)))).then((querySnapshot) => {
                 const products = querySnapshot.docs.map(doc => {
                     return { id: doc.id, ...doc.data() }
                 }) 
                 setProducts(products)
             }).catch((error) => {
-                console.log('Error searching intems', error)
+                console.log('Error searching items', error)
             }).finally(() => {
                 setLoading(false)
             })
         }      
-    }, [categoryid])
+    }, [categoryId])
 
+    console.log(products)
+    console.log(categoryId)
     return (
         <div className="ItemListContainer" >
-             { loading ? "Loading.." : <ItemList products={products}/> }
+             { loading ? "Loading.." : <ItemList products={products || []}/> }
         </div>
     )    
     

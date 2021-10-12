@@ -36,7 +36,7 @@ const [state, setState] = useState ()
           <Route exact path="/">
             <ItemListContainer/>
         </Route>
-        <Route exact path="/category/:id">
+        <Route exact path="/category/:categoryId">
             <ItemListContainer/>
         </Route>
         <Route path="/item/:id">

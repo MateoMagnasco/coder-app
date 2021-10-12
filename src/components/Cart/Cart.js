@@ -74,7 +74,7 @@ const Cart = () => {
             {products && products.length ? <div> <h3 style ={{color : 'white'}}>Precio Total: {`$${totalPrice}`}</h3>
             {!processingOrder && products.length > 0 && <button onClick={() => clearCart()} className="Button">Cancelar compra</button>}
             {!processingOrder && products.length > 0 && <button onClick={() => confirmOrder()} className="Button">Confirmar Compra</button>}
-            {!processingOrder ? <ItemList items={products} /> : 'Procesando Orden'}</div>:<Link to="/" style={{color:"white"}}>Aún no se han agregado productos al carrito!</Link>}
+            {!processingOrder ? <ItemList products={products} /> : 'Procesando Orden'}</div>:<Link to="/" style={{color:"white"}}>Aún no se han agregado productos al carrito!</Link>}
            
     
            

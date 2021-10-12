@@ -6,9 +6,9 @@ import { useContext } from 'react'
 
 
 
-const Item = ({product}) => {
+const Item = (props) => {
   const {removeProduct, clearCart, products} = useContext (CartContext)
-
+  const product = props
   if(!product.title){
     return <h3>Loading...</h3>   }
     

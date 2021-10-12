@@ -29,12 +29,6 @@ const Counter = ({initial, stock,setCount, setAdded, itemData }) => {
     addItem(itemData, quantity)
 
   }
-      
-
-      
-
-
-
 return (<div  className="divCounter">
 
 

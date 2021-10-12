@@ -5,20 +5,13 @@ import { useState } from "react"
 
 
 
-const ItemDetail = ({ product, productsAdded, addProdFunction }) => {
+const ItemDetail = (props) => {
 
     const [count, setCount] = useState (0)
 
     const [added, setAdded] = useState (false)
 
-
-
-
-    
-
-
-
-
+    const product = props.item
 
     return(
         <div className="card mb-3" id="div">
@@ -29,7 +22,7 @@ const ItemDetail = ({ product, productsAdded, addProdFunction }) => {
                 <p className="card-text">Precio: {product.price}</p>
             </div>
 
-            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded} itemData={product.item} />}
+            {added ? "" : <Counter initial={1} stock={25} setCount={setCount} setAdded= {setAdded} itemData={product} />}
         </div>
 
 
