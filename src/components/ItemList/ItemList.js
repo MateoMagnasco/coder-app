@@ -2,25 +2,32 @@ import Item from "../Item/Item"
 import "./itemList.css"
 
 
+/* const ItemList = ({products}) => {
+
+  if(products.length === 0) {
+    return <h3>No hay productos</h3>
+  } 
+
+  return (
+    <ul className="list-group">
+      {products.map(product =><Item key={product.id} product={product}/>)}
+    </ul>
+  )
+}
+export default ItemList */
 
 
 
-/* const handleOnKeyDown = (ev) =>{
-  if(ev.key==="a" || ev.key==="e" || ev.key==="i" || ev.key==="o" || ev.key==="u"){
-    ev.preventDefault()
-  } else {console.log(ev.key)}
-
-} */
 
 
 
 
-const ItemList = (props) =>{
-  console.log(props.items)  
+const ItemList = ({products}) =>{
+
     
     return ( 
     <div id="estilo">
-       {props.items.map(item => {return <div key={item.id}> <Item id={item.id} title={item.title} price = {item.price} pictureUrl = {item.pictureUrl} description = {item.description} quantity = {item.quantity}  /></div> })
+       {products.map(product => {return <div key={product.id}> <Item id={product.id} title={product.title} price = {product.price} pictureUrl = {product.pictureUrl} description = {product.description} quantity = {product.quantity}  /></div> })
        } 
     
      </div>
@@ -29,4 +36,4 @@ const ItemList = (props) =>{
     
 }
 
-export default ItemList;
+export default ItemList; 

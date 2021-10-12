@@ -6,23 +6,23 @@ import { useContext } from 'react'
 
 
 
-const Item = (props) => {
-  const {removeProduct} = useContext (CartContext)
+const Item = ({product}) => {
+  const {removeProduct, clearCart, products} = useContext (CartContext)
 
-  if(!props.title){
+  if(!product.title){
     return <h3>Loading...</h3>   }
     
   return (
     <>
-    <Link to={`/item/${props.id}`}>
+    <Link to={`/item/${product.id}`}>
       <div className="card mb-3" id="imagen" >
         
        
         <div className="card-body">
-          <h5 className="card-title">{props.title}</h5>
-          <img src={props.pictureUrl} alt="..." id="max"/>
-          <p className="card-text">{props.price}</p>
-          {props.quantity && <p>Cantidad:  {`${props.quantity}`}</p>}
+          <h5 className="card-title">{product.title}</h5>
+          <img src={product.pictureUrl} alt="..." id="max"/>
+          <p className="card-text">{product.price}</p>
+          {product.quantity && <p>Cantidad:  {`${product.quantity}`}</p>}
           
 
           
@@ -31,8 +31,9 @@ const Item = (props) => {
       </div>
     </Link>
     
-    {props.quantity && <button onClick={() => removeProduct(props.id)}
+    {product.quantity && <button onClick={() => removeProduct(product.id)}
     > remover producto</button> }
+    {!products && clearCart()}
     </>
   )
 }

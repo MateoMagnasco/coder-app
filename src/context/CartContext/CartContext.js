@@ -41,9 +41,10 @@ export const CartContextProvider = ({ children }) => {
         const newProducts = products.filter(prod => prod.id !== id)
         setProducts(newProducts)
         setTotalPrice(totalPrice - deletedProduct.price * deletedProduct.quantity)
-        if(products =="") {
-            clearCart()
-        }
+        
+      
+        
+        
         
         
 

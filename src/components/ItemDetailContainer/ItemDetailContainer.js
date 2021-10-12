@@ -4,6 +4,8 @@ import './itemDetailContainer.css'
 import getItemList from "../../services/getItems"
 import { useParams } from "react-router"
 import CheckoutButton from "../CheckoutButton/CheckoutButton"
+import { db } from '../../services/firebase/firebase'
+import { doc, getDoc } from 'firebase/firestore'
 
 
 
