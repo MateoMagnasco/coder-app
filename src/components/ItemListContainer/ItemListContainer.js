@@ -45,7 +45,7 @@ const ItemListContainer = ()=> {
     console.log(categoryId)
     return (
         <div className="ItemListContainer" >
-             { loading ? "Loading.." : <ItemList products={products || []}/> }
+             { loading ? <h1 style={{color:"white"}}>Loading...</h1>  : <ItemList products={products || []}/> }
         </div>
     )    
     
