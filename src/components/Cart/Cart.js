@@ -17,6 +17,7 @@ const Cart = () => {
   const [total, setTotal] = useState();
   const [processingOrder, setProcessingOrder] = useState(false);
   const { products, clearCart, getTotal, totalPrice } = useContext(CartContext);
+  const [confirmedOrder, setConfirmedOrder] = useState (false)
 
   useEffect(() => {
     setTotal(getTotal());
@@ -24,11 +25,12 @@ const Cart = () => {
 
   const confirmOrder = () => {
     setProcessingOrder(true);
-
     const objOrder = {
       items: products,
       total: total,
       date: Timestamp.fromDate(new Date()),
+      
+      
     };
 
     const batch = writeBatch(db);
@@ -63,6 +65,7 @@ const Cart = () => {
           setTotal(0);
         });
     }
+      setConfirmedOrder(true)
   };
 
   return (
@@ -90,7 +93,7 @@ const Cart = () => {
         </div>
       ) : (
         <Link to="/" style={{ color: "white" }}>
-          Aún no se han agregado productos al carrito!
+         {confirmedOrder ? "La compra se ha realizado con éxito!" : "Aún no se han agregado productos al carrito!"} 
         </Link>
       )}
     </div>
