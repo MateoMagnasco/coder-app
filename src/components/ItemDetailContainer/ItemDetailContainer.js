@@ -1,7 +1,7 @@
+import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./itemDetailContainer.css";
-import { useParams } from "react-router";
 import CheckoutButton from "../CheckoutButton/CheckoutButton";
 import { getProductById } from "../../services/firebase/firebase";
 import Counter from "../Counter/ItemCount";

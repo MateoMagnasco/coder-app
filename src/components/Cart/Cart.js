@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   collection,
   addDoc,
@@ -11,7 +12,6 @@ import "./cart.css";
 import ItemList from "../ItemList/ItemList";
 import CartContext from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebase";
-import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [total, setTotal] = useState();
@@ -54,7 +54,9 @@ const Cart = () => {
         .then(() => {
           batch.commit().then(() => {});
         })
-        .catch((error) => {})
+        .catch((error) => {
+          console.log(error);
+        })
         .finally(() => {
           setProcessingOrder(false);
           clearCart();
