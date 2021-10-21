@@ -36,7 +36,7 @@ const firebaseConfig = {
     return new Promise((resolve, reject) => {
         getDocs(collection(db, 'categories')).then((querySnapshot) => {
             const categories = querySnapshot.docs.map(doc => {
-                return { id: doc.id, ...doc.data() }
+                return { ...doc.data() }
             }) 
             resolve(categories)
         }).catch((error) => {

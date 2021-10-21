@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import './itemDetailContainer.css'
-import getItemList from "../../services/getItems"
 import { useParams } from "react-router"
 import CheckoutButton from "../CheckoutButton/CheckoutButton"
-import { db } from '../../services/firebase/firebase'
-import { doc, getDoc } from 'firebase/firestore'
 import { getProductById } from "../../services/firebase/firebase"
+import Counter from "../Counter/ItemCount"
 
 
 
@@ -16,7 +14,7 @@ import { getProductById } from "../../services/firebase/firebase"
 const ItemDetailContainer =() =>{
   
 
-    const[itemData,setItem] = useState(null)
+    const[item,setItem] = useState(null)
 
 
     const params = useParams()
@@ -27,13 +25,14 @@ const ItemDetailContainer =() =>{
 
         },[])
     
-        if(!itemData){
+        if(!item){
             return <h1 style={{color:"white"}}>Loading...</h1>
         }
-        console.log(itemData)
+        console.log(item)
     return (
         <div className="estilo">
-            <ItemDetail item={itemData}/>
+            <ItemDetail item ={item} />
+            <Counter item={item} />
             
             <CheckoutButton/>
 

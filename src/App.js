@@ -1,4 +1,4 @@
-import {useEffect, useState, createContext} from 'react' 
+
 import './App.css';
 import NavBar from './components/Navbar/NavBar'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
@@ -15,13 +15,6 @@ import Cart from './components/Cart/Cart';
 
    
 function App() {
-
-const [state, setState] = useState ()
-
-
-
-  
-
 
   return (
   <div className="App" >
