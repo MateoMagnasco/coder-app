@@ -27,7 +27,7 @@
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color:white;
+  color: white;
 }
 
 .App-link {
@@ -45,5 +45,5 @@
 .App-footer {
   background-color: black;
 
-  color:black;
+  color: black;
 }

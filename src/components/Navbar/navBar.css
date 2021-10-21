@@ -1,27 +1,23 @@
+.navBar {
+  background-color: rgb(29, 29, 29);
 
-.navBar{
-    background-color: rgb(29, 29, 29);
-
-    height: 40px;
-    border-radius: 3px;
-    width: 100%;
-    float: none;
-    text-align: center;
-  
+  height: 40px;
+  border-radius: 3px;
+  width: 100%;
+  float: none;
+  text-align: center;
 }
 
 .option {
-    padding: 1%;
-    margin: 1%;
-    color: rgb(253, 253, 219);
-   
-  
+  padding: 1%;
+  margin: 1%;
+  color: rgb(253, 253, 219);
 }
 
 .navLink {
-    color: rgb(241, 188, 11);
-    background-color: rgba(1, 1, 20, 0.192);
-    border-radius: 3px;
-    padding: 1% ;
-    margin: 1%;}
-
+  color: rgb(241, 188, 11);
+  background-color: rgba(1, 1, 20, 0.192);
+  border-radius: 3px;
+  padding: 1%;
+  margin: 1%;
+}

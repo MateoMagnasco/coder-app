@@ -1,18 +1,16 @@
 #max {
-    width: 18rem;
-    text-align: center;
-    height: 5%;
-    display:block;
-    margin:auto;
-    background-color: black;
-    color: white;
-    
+  width: 18rem;
+  text-align: center;
+  height: 5%;
+  display: block;
+  margin: auto;
+  background-color: black;
+  color: white;
 }
 
 #div {
-    
-    border-radius: 8px;
-    box-shadow: 10px 5px 5px black;
-    background-color: black;
-    color: white;
-} 
+  border-radius: 8px;
+  box-shadow: 10px 5px 5px black;
+  background-color: black;
+  color: white;
+}

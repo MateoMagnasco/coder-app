@@ -1,19 +1,17 @@
 #imagen {
-    width: 400px;
-    height: 280px;
-    text-align: center;
-    display:inline-block;
-    margin:auto;
-    background-color: black;
-    color: white;
-    border: solid grey 2px;
-    
-    
-  }
+  width: 400px;
+  height: 280px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  background-color: black;
+  color: white;
+  border: solid grey 2px;
+}
 
-  #max {
-      height: 50px;
-      width: 10px;
+#max {
+  height: 50px;
+  width: 10px;
 
-      margin: auto;
-  }
+  margin: auto;
+}
