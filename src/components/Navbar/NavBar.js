@@ -40,7 +40,7 @@ const NavBar = () => {
           <Link to={"/"} className="option" id="contacto">
             Contactanos!
           </Link>
-          {getQuantity() !== 0 && <CartWidget />}
+          {/* getQuantity() !== 0 &&  */<CartWidget />}
         </div>
       </nav>
       <Brand />

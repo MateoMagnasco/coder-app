@@ -12,12 +12,14 @@ import "./cart.css";
 import ItemList from "../ItemList/ItemList";
 import CartContext from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebase";
+import ContactForm from '../ContactForm/ContactForm'
 
 const Cart = () => {
   const [total, setTotal] = useState();
   const [processingOrder, setProcessingOrder] = useState(false);
   const { products, clearCart, getTotal, totalPrice } = useContext(CartContext);
-  const [confirmedOrder, setConfirmedOrder] = useState (false)
+  const [confirmedOrder, setConfirmedOrder] = useState(false);
+  const [form, setForm] = useState(false);
 
   useEffect(() => {
     setTotal(getTotal());
@@ -25,12 +27,14 @@ const Cart = () => {
 
   const confirmOrder = () => {
     setProcessingOrder(true);
+    setForm(true);
     const objOrder = {
       items: products,
       total: total,
       date: Timestamp.fromDate(new Date()),
-      
-      
+      /* firstName:
+      lastName:
+      email: */
     };
 
     const batch = writeBatch(db);
@@ -65,7 +69,7 @@ const Cart = () => {
           setTotal(0);
         });
     }
-      setConfirmedOrder(true)
+    setConfirmedOrder(true);
   };
 
   return (
@@ -93,9 +97,13 @@ const Cart = () => {
         </div>
       ) : (
         <Link to="/" style={{ color: "white" }}>
-         {confirmedOrder ? "La compra se ha realizado con éxito!" : "Aún no se han agregado productos al carrito!"} 
+          {confirmedOrder
+            ? "La compra se ha realizado con éxito!"
+            : "Aún no se han agregado productos al carrito!"}
         </Link>
       )}
+      <ContactForm></ContactForm>
+      
     </div>
   );
 };
