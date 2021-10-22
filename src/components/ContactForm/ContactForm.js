@@ -1,55 +1,61 @@
 import { useState } from 'react'
 import './contactForm.css'
 
-const ContactForm = ({ toggleVisibility, setContact }) => {
+const ContactForm = ({ toggleVisibility, setFirstName, setLastName, setEmail, confirmOrder }) => {
     const [phone, setPhone] = useState('')
     const [address, setAddress] = useState('')
     const [comment, setComment] = useState('')
+    let firstName = ""
+    let lastName = ""
+    let email = ""
 
     const handleContactForm = (e) => {
         e.preventDefault()
-        toggleVisibility.current.toggleVisibility()
+        setFirstName(firstName)
+        setLastName(lastName)
+        setEmail(email)
+       
 
         const objContact = {
             phone,
             address,
             comment
         }
-        setContact(objContact)
-        setPhone('')
-        setAddress('')
-        setComment('')
+       
     }
 
     return (
         <div className='ContactContainer'>
-          <div>Contacto</div>
+          <div>Nombre</div>
           <form className='ContactForm' onSubmit={handleContactForm}>
-            <label className='LabelContact'>Telefono:
+            <label className='LabelContact'>Nombre:
               <input
                 className='InputContact'
                 type='text'
-                value={phone}
-                onChange={({ target }) => setPhone(target.value)}
+                value={firstName}
+                onChange={({ target }) => setFirstName(target.value)}
               />
             </label>
-            <label className='LabelContact'>Direccion:
+            <label className='LabelContact'>Apellido:
               <input
                 className='InputContact'
                 type='text'
-                value={address}
-                onChange={({ target }) => setAddress(target.value)}
+                value={lastName}
+                onChange={({ target }) => setLastName(target.value)}
               />
             </label>
-            <label className='LabelContact'>Comentario: 
+            <label className='LabelContact'>Email: 
               <input
                 className='InputContact'
                 type='text'
-                value={comment}
-                onChange={({ target }) => setComment(target.value)}
+                value={email}
+                onChange={({ target }) => setEmail(target.value)}
               />
             </label>
-            <button className='Button' type='submit'>Confirmar</button>
+            <button onClick={() => confirmOrder()} className="Button">
+              Confirmar Compra
+            </button>
+          
           </form>
         </div>
       )

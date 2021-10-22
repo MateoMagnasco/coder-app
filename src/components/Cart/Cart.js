@@ -13,6 +13,8 @@ import ItemList from "../ItemList/ItemList";
 import CartContext from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebase";
 import ContactForm from '../ContactForm/ContactForm'
+import { useHistory } from 'react-router'
+import userEvent from "@testing-library/user-event";
 
 const Cart = () => {
   const [total, setTotal] = useState();
@@ -20,6 +22,16 @@ const Cart = () => {
   const { products, clearCart, getTotal, totalPrice } = useContext(CartContext);
   const [confirmedOrder, setConfirmedOrder] = useState(false);
   const [form, setForm] = useState(false);
+  const [contact, setContact] = useState({
+    phone: '',
+    address: '',
+    comment: ''
+})
+  const [firstName, setFirstName] = useState(null)
+  const [lastName, setLastName] = useState(null)
+  const [email, setEmail] = useState(null)
+
+
 
   useEffect(() => {
     setTotal(getTotal());
@@ -29,9 +41,13 @@ const Cart = () => {
     setProcessingOrder(true);
     setForm(true);
     const objOrder = {
+      firstName,
+      lastName,
+      email,
       items: products,
       total: total,
       date: Timestamp.fromDate(new Date()),
+
       /* firstName:
       lastName:
       email: */
@@ -102,7 +118,7 @@ const Cart = () => {
             : "Aún no se han agregado productos al carrito!"}
         </Link>
       )}
-      <ContactForm></ContactForm>
+      <ContactForm setFirstName={setFirstName} setLastName={setLastName} setEmail={setEmail} confirmOrder= {confirmOrder}/>
       
     </div>
   );

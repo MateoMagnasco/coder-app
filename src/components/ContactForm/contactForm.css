@@ -11,6 +11,7 @@
     align-items: flex-start;
     margin-top: 20px;
     font-size: 14px;
+    color: blanchedalmond;
 }
 
 .InputContact {
@@ -22,6 +23,7 @@
     padding: 8px 5px;
     background: transparent;
     outline: none;
+    color: blanchedalmond;
 }
 
 .InputContact:-webkit-autofill,
