@@ -1,64 +1,74 @@
-import { useState } from 'react'
-import './contactForm.css'
+import { useState } from "react/cjs/react.development";
+import "./contactForm.css";
 
-const ContactForm = ({ toggleVisibility, setFirstName, setLastName, setEmail, confirmOrder }) => {
-    const [phone, setPhone] = useState('')
-    const [address, setAddress] = useState('')
-    const [comment, setComment] = useState('')
-    let firstName = ""
-    let lastName = ""
-    let email = ""
+const ContactForm = ({
+  setFirstName,
+  setLastName,
+  setEmail,
+  setSentInfo,
+  confirmOrder,
+  clearCart,
+  processingOrder,
+  productsLength,
+}) => {
+  const [formFirstName, setFormFirstName] = useState("");
+  const [formLastName, setFormLastName] = useState("");
+  const [formEmail, setFormEmail] = useState("");
+  
 
-    const handleContactForm = (e) => {
-        e.preventDefault()
-        setFirstName(firstName)
-        setLastName(lastName)
-        setEmail(email)
-       
+  const handleContactForm = (e) => {
+    e.preventDefault();
+    setFirstName(formFirstName);
+    setLastName(formLastName);
+    setEmail(formEmail);
 
-        const objContact = {
-            phone,
-            address,
-            comment
-        }
-       
-    }
+    console.log(formFirstName);
+  };
 
-    return (
-        <div className='ContactContainer'>
-          <div>Nombre</div>
-          <form className='ContactForm' onSubmit={handleContactForm}>
-            <label className='LabelContact'>Nombre:
-              <input
-                className='InputContact'
-                type='text'
-                value={firstName}
-                onChange={({ target }) => setFirstName(target.value)}
-              />
-            </label>
-            <label className='LabelContact'>Apellido:
-              <input
-                className='InputContact'
-                type='text'
-                value={lastName}
-                onChange={({ target }) => setLastName(target.value)}
-              />
-            </label>
-            <label className='LabelContact'>Email: 
-              <input
-                className='InputContact'
-                type='text'
-                value={email}
-                onChange={({ target }) => setEmail(target.value)}
-              />
-            </label>
-            <button onClick={() => confirmOrder()} className="Button">
-              Confirmar Compra
-            </button>
-          
-          </form>
-        </div>
-      )
-}
+  return (
+  <div className="ContactContainer">
+      <div>Nombre</div>
+      <form className="ContactForm" onSubmit={handleContactForm}>
+        <label className="LabelContact">
+          Nombre:
+          <input
+            className="InputContact"
+            type="text"
+            value={formFirstName}
+            required
+            onChange={({ target }) => setFormFirstName(target.value)}
+            placeholder = "Ej: Carlos"
+          />
+        </label>
+        <label className="LabelContact">
+          Apellido:
+          <input
+            className="InputContact"
+            type="text"
+            required
+            value={formLastName}
+            onChange={({ target }) => setFormLastName(target.value)}
+            placeholder = "Ej: Perez"
+          />
+        </label>
+        <label className="LabelContact">
+          Email:
+          <input
+            className="InputContact"
+            type="email"
+            value={formEmail}
+            onChange={({ target }) => setFormEmail(target.value)}
+            required
+            placeholder ="ejemplo@gmail.com"
+          />
+        </label>
+        
 
-export default ContactForm
+          <button className='Button' type='submit' onClick={() =>setSentInfo(true)}>Enviar datos</button>
+      
+      </form>
+    </div>
+  );
+};
+
+export default ContactForm;

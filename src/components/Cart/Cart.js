@@ -12,26 +12,26 @@ import "./cart.css";
 import ItemList from "../ItemList/ItemList";
 import CartContext from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebase";
-import ContactForm from '../ContactForm/ContactForm'
-import { useHistory } from 'react-router'
+import ContactForm from "../ContactForm/ContactForm";
+import { useHistory } from "react-router";
 import userEvent from "@testing-library/user-event";
 
 const Cart = () => {
   const [total, setTotal] = useState();
   const [processingOrder, setProcessingOrder] = useState(false);
-  const { products, clearCart, getTotal, totalPrice } = useContext(CartContext);
+  const { products, clearCart, getTotal, totalPrice} = useContext(CartContext);
   const [confirmedOrder, setConfirmedOrder] = useState(false);
   const [form, setForm] = useState(false);
   const [contact, setContact] = useState({
-    phone: '',
-    address: '',
-    comment: ''
-})
-  const [firstName, setFirstName] = useState(null)
-  const [lastName, setLastName] = useState(null)
-  const [email, setEmail] = useState(null)
-
-
+    phone: "",
+    address: "",
+    comment: "",
+  });
+  const [firstName, setFirstName] = useState(null);
+  const [lastName, setLastName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [sentInfo, setSentInfo] = useState(false)
+  
 
   useEffect(() => {
     setTotal(getTotal());
@@ -95,16 +95,6 @@ const Cart = () => {
         <div>
           {" "}
           <h3 style={{ color: "white" }}>Precio Total: {`$${totalPrice}`}</h3>
-          {!processingOrder && products.length > 0 && (
-            <button onClick={() => clearCart()} className="Button">
-              Cancelar compra
-            </button>
-          )}
-          {!processingOrder && products.length > 0 && (
-            <button onClick={() => confirmOrder()} className="Button">
-              Confirmar Compra
-            </button>
-          )}
           {!processingOrder ? (
             <ItemList products={products} />
           ) : (
@@ -118,7 +108,24 @@ const Cart = () => {
             : "Aún no se han agregado productos al carrito!"}
         </Link>
       )}
-      <ContactForm setFirstName={setFirstName} setLastName={setLastName} setEmail={setEmail} confirmOrder= {confirmOrder}/>
+      {}<ContactForm
+        setFirstName={setFirstName}
+        setLastName={setLastName}
+        setEmail={setEmail}
+        confirmOrder={confirmOrder}
+        clearCart={clearCart}
+        setSentInfo ={setSentInfo}
+      />
+      {sentInfo &&!processingOrder && products.length > 0 &&  (
+        <button onClick={() => confirmOrder()} className="Button">
+          Confirmar Compra
+        </button>
+      )}
+      {!processingOrder && products.length > 0 && (
+        <button onClick={() => clearCart()} className="Button">
+          Cancelar compra
+        </button>
+      )}
       
     </div>
   );

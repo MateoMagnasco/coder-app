@@ -23,7 +23,7 @@ const Item = ({ item }) => {
       </Link>
 
       {item.quantity && (
-        <button onClick={() => removeProduct(item.id)}>
+        <button className="Button" onClick={() => removeProduct(item.id)}>
           {" "}
           remover producto
         </button>
