@@ -5,5 +5,39 @@
 - Instalar dependencias `npm install`
 - Levantar proyecto `npm start`
 
+## Tech stack
+- React
+Librería para desarrollo de interfaces gráficas.
+- Firestore
+Base de datos no relacional del ecosistema Firebase.
+- ESLint
+Extensión para formateo de código.
+- Bootstrap
+Librería de estilos.
+- Node
+Entorno de ejecución de Javascript.
+
+
+## Organización proyecto
+### Components
+Decidí dividir cada uno de los componentes involucrados en una carpeta a parte dentro de la carpeta "Components" de manera de poder reutilzarlos. Cada uno conteniendo su código fuente y su hoja de estilos.
+### NavBar
+Contiene las distintas categorias del E-commerce y un link hacia el carrito. 
+### Brand 
+Contiene el logo de la marca.
+### Cart
+Contiene la información del carrito 
+
+
+
+### Context
+Cree contexto para el carrito, de manera que varios componentes pudieran interactuar con el mismo sin tener que recibir la información por props. Dentro del contexto definí funciones tanto para la obtención de los productos, como para su filtrado, adición y remoción.
+
+### Services
+
+
+
+
+
 
 
