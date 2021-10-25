@@ -5,7 +5,6 @@ const CartContext = createContext();
 export const CartContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
- 
 
   const addItem = (item, quantity) => {
     const newProduct = {
@@ -42,7 +41,6 @@ export const CartContextProvider = ({ children }) => {
   const clearCart = () => {
     setProducts([]);
     setTotalPrice(0);
-    
   };
 
   const isInCart = (id) => {
@@ -81,7 +79,6 @@ export const CartContextProvider = ({ children }) => {
         getTotal,
         getProduct,
         totalPrice,
-        
       }}
     >
       {children}

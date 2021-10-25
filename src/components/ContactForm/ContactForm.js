@@ -6,7 +6,7 @@ const ContactForm = ({ setFirstName, setLastName, setEmail, setSentInfo }) => {
   const [formFirstName, setFormFirstName] = useState("");
   const [formLastName, setFormLastName] = useState("");
   const [formEmail, setFormEmail] = useState("");
-  const [formSent, setFormSent] = useState (false)
+  const [formSent, setFormSent] = useState(false);
 
   const hasRequiredFields = () => {
     return formFirstName.length && formLastName.length && formEmail.length;
@@ -19,15 +19,16 @@ const ContactForm = ({ setFirstName, setLastName, setEmail, setSentInfo }) => {
     setFirstName(formFirstName);
     setLastName(formLastName);
     setEmail(formEmail);
-    setFormSent(true)
+    setFormSent(true);
 
     console.log(formFirstName);
   };
 
   return (
     <div className="ContactContainer" hidden={!products.length}>
-     
-      <div style={{color:"white"}}>Ingrese sus datos para realizar la compra!</div>
+      <div style={{ color: "white" }}>
+        Ingrese sus datos para realizar la compra!
+      </div>
       <form className="ContactForm" onSubmit={handleContactForm}>
         <label className="LabelContact">
           Nombre:*
@@ -66,8 +67,7 @@ const ContactForm = ({ setFirstName, setLastName, setEmail, setSentInfo }) => {
         <button
           className="Button"
           type="submit"
-          hidden={!hasRequiredFields() ||
-            formSent}
+          hidden={!hasRequiredFields() || formSent}
           onClick={() => setSentInfo(true)}
         >
           Enviar datos

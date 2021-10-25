@@ -1,45 +1,35 @@
 .ContactForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- 
-  
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .LabelContact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 20px;
-    font-size: 14px;
-    color: blanchedalmond;
-    
-   
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 20px;
+  font-size: 14px;
+  color: blanchedalmond;
 }
 
 .InputContact {
-    border-style: none;
-    border-bottom: 2px solid #8C30F5;
-    width: 85vw;
-    height: 20px;
-    margin-top: 10px;
-    padding: 8px 5px;
-    background: transparent;
-    outline: none;
-    color: blanchedalmond;
-   
-  
-  
+  border-style: none;
+  border-bottom: 2px solid #8c30f5;
+  width: 85vw;
+  height: 20px;
+  margin-top: 10px;
+  padding: 8px 5px;
+  background: transparent;
+  outline: none;
+  color: blanchedalmond;
 }
 
 .InputContact:-webkit-autofill,
-.InputContact:-webkit-autofill:hover, 
-.InputContact:-webkit-autofill:focus, 
-.InputContact:-webkit-autofill:active  {
+.InputContact:-webkit-autofill:hover,
+.InputContact:-webkit-autofill:focus,
+.InputContact:-webkit-autofill:active {
   transition: background-color 5000s;
   -webkit-text-fill-color: #fff !important;
 }

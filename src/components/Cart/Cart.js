@@ -13,13 +13,11 @@ import ItemList from "../ItemList/ItemList";
 import CartContext from "../../context/CartContext/CartContext";
 import { db } from "../../services/firebase/firebase";
 import ContactForm from "../ContactForm/ContactForm";
-import { useHistory } from "react-router";
-import userEvent from "@testing-library/user-event";
 
 const Cart = () => {
   const [total, setTotal] = useState();
   const [processingOrder, setProcessingOrder] = useState(false);
-  const { products, clearCart, getTotal, totalPrice} = useContext(CartContext);
+  const { products, clearCart, getTotal, totalPrice } = useContext(CartContext);
   const [confirmedOrder, setConfirmedOrder] = useState(false);
   const [form, setForm] = useState(false);
   const [contact, setContact] = useState({
@@ -30,8 +28,7 @@ const Cart = () => {
   const [firstName, setFirstName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [sentInfo, setSentInfo] = useState(false)
-  
+  const [sentInfo, setSentInfo] = useState(false);
 
   useEffect(() => {
     setTotal(getTotal());
@@ -47,10 +44,6 @@ const Cart = () => {
       items: products,
       total: total,
       date: Timestamp.fromDate(new Date()),
-
-      /* firstName:
-      lastName:
-      email: */
     };
 
     const batch = writeBatch(db);
@@ -108,15 +101,16 @@ const Cart = () => {
             : "Aún no se han agregado productos al carrito!"}
         </Link>
       )}
-      {}<ContactForm
+      {}
+      <ContactForm
         setFirstName={setFirstName}
         setLastName={setLastName}
         setEmail={setEmail}
         confirmOrder={confirmOrder}
         clearCart={clearCart}
-        setSentInfo ={setSentInfo}
+        setSentInfo={setSentInfo}
       />
-      {sentInfo &&!processingOrder && products.length > 0 &&  (
+      {sentInfo && !processingOrder && products.length > 0 && (
         <button onClick={() => confirmOrder()} className="Button">
           Confirmar Compra
         </button>
@@ -126,7 +120,6 @@ const Cart = () => {
           Cancelar compra
         </button>
       )}
-      
     </div>
   );
 };

@@ -1,13 +1,12 @@
 import { NavLink, Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import "./navBar.css";
 import Brand from "../Brand/Brand";
-import CartContext from "../../context/CartContext/CartContext";
+
 import { getCategories } from "../../services/firebase/firebase";
 
 const NavBar = () => {
-  const { getQuantity } = useContext(CartContext);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -40,7 +39,7 @@ const NavBar = () => {
           <Link to={"/"} className="option" id="contacto">
             Contactanos!
           </Link>
-          {/* getQuantity() !== 0 &&  */<CartWidget />}
+          <CartWidget />
         </div>
       </nav>
       <Brand />
