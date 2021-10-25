@@ -6,15 +6,15 @@
 - Levantar proyecto `npm start`
 
 ## Tech stack
-- React
+### React
 Librería para desarrollo de interfaces gráficas.
-- Firestore
+### Firestore
 Base de datos no relacional del ecosistema Firebase.
-- ESLint
+### ESLint
 Extensión para formateo de código.
-- Bootstrap
+### Bootstrap
 Librería de estilos.
-- Node
+### Node
 Entorno de ejecución de Javascript.
 
 
@@ -34,6 +34,20 @@ Contiene la información del carrito
 Cree contexto para el carrito, de manera que varios componentes pudieran interactuar con el mismo sin tener que recibir la información por props. Dentro del contexto definí funciones tanto para la obtención de los productos, como para su filtrado, adición y remoción.
 
 ### Services
+Para la interacción con servicios externos.
+Firestore es una base de datos no relacional.
+Dentro del archivo `src/services/firebase.js` definí las siguientes funciones:
+#### getCategories()
+Obtiene las categorías.
+#### getProducts()
+Obtiene los productos.
+#### getProductsByID(id)
+Obtiene un producto mediante su id.
+#### createOrder(order)
+Crea la orden con sus productos y datos del usuario.
+
+
+
 
 
 
