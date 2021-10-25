@@ -3,6 +3,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+ 
+  
+   
 }
 
 .LabelContact {
@@ -12,6 +15,10 @@
     margin-top: 20px;
     font-size: 14px;
     color: blanchedalmond;
+    
+   
+  
+  
 }
 
 .InputContact {
@@ -24,6 +31,9 @@
     background: transparent;
     outline: none;
     color: blanchedalmond;
+   
+  
+  
 }
 
 .InputContact:-webkit-autofill,

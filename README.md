@@ -1,9 +1,17 @@
 # E-commerce guitarras
 ## Instrucciones para correr el proyecto de manera local.
-- Clonar repositorio `git clone https://github.com/MateoMagnasco/coder-app.git`
-- Cambiar directorio `cd coder-app`
-- Instalar dependencias `npm install`
-- Levantar proyecto `npm start`
+1. Clonar repositorio `git clone https://github.com/MateoMagnasco/coder-app.git`
+2. Setear las siguientes variables de entorno:
+- `REACT_APP_apiKey`
+- `REACT_APP_authDomain`
+- `REACT_APP_projectId`
+- `REACT_APP_storageBucket`
+- `REACT_APP_messagingSenderId`
+- `REACT_APP_appId`
+3. Cambiar directorio `cd coder-app`
+4. Instalar dependencias `npm install`
+5. Levantar proyecto `npm start`
+
 
 ## Tech stack
 ### React
@@ -26,7 +34,8 @@ Contiene las distintas categorias del E-commerce y un link hacia el carrito.
 ### Brand 
 Contiene el logo de la marca.
 ### Cart
-Contiene la información del carrito 
+Contiene la información del carrito
+
 
 
 
